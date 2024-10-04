@@ -1,0 +1,20 @@
+-- 1 Identifique departamentos com mais de 15 funcionários.
+select * from departamento
+where qtdfuncionariosdepto > 15;
+-- 2 Selecione os nomes dos funcionários cujo salário é maior ou igual a R$ 4.000.
+select nome_funcionario from funcionario where salario >= 4000;
+-- 3 Calcular a média salarial dos funcionários.
+select AVG (salario) from funcionario;
+-- 4 Calcular a média (estude como usar a função AVG) salarial dos funcionários com duas casas decimais de precisão após a vírgula,
+-- (estude como usar a função ROUND).
+select ROUND(AVG (salario),2) from funcionario;
+-- 5 Encontre funcionários cujo nome contém "Gomes".
+select * from funcionario where nome_funcionario = "Gomes";
+-- 6 Calcule o salário anual de todos os funcionários.
+select salario * 12 as salario_anual from funcionario;
+-- 7 Identifique o funcionário com o salário mais alto (estude como usar a função MAX).
+select max(salario) as maior_salario from funcionario;
+-- 8 Identifique os 2 salários mais altos (estude como usar a função LIMIT).
+select nome_funcionario, salario from funcionario order by salario desc limit 2;
+-- 9 Identifique o funcionário	mais velho de cada cargo (com	mais tempo de serviço).
+select max(data_admissao) as servidor_mais_antigo from funcionario;
